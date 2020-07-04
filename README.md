@@ -1,7 +1,9 @@
 
 # GeorgiaTech Bootcamp Project 2 
 
-## Web Visualizations of US Senate
+## Web Visualization of US Senate
+
+(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Capitol_at_night_7_%28Washington%29_%2844519231474%29.jpg/800px-Capitol_at_night_7_%28Washington%29_%2844519231474%29.jpg)
 
 
 ## Team Members: 
