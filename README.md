@@ -45,6 +45,18 @@ Poverty Rate: [Poverty Rate Data](https://worldpopulationreview.com/state-rankin
 ## Inspired Visualizations
 
 
+### 1. Contact Card
+
+![Contact Card](Images/Image1.png)
+
+
+### 2. Stacked BarChart
+
+![Barchart](Images/Image2.png)
+
+### 3. Map
+
+![map](Images/Image3.png)
 
 
 
