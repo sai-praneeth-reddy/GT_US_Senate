@@ -7,20 +7,20 @@
 
 
 ## Team Members: 
-[Ana Cifuentes](https://www.linkedin.com/in/anacifuentesco/?locale=en_US) <br />
-[Cornelia Harris](www.linkedin.com/in/corneliaharris) <br />
-[Lingzi Xiaoli](https://www.linkedin.com/in/lingzi-xiaoli-27b87174) <br />
-[Rachael Munyua](www.linkedin.com/in/rachael-munyua) <br />
-[Sai Reddy](https://www.linkedin.com/in/saipraneeth1/) <br />
-[Vihn Pahn](https://github.com/vn0707/) <br />
+[Ana,Cifuentes](https://www.linkedin.com/in/anacifuentesco/?locale=en_US) <br />
+[Cornelia,Harris](http://www.linkedin.com/in/corneliaharris) <br />
+[Lingzi,Xiaoli](https://www.linkedin.com/in/lingzi-xiaoli-27b87174) <br />
+[Rachael,Munyua](http://www.linkedin.com/in/rachael-munyua) <br />
+[Sai,Reddy](https://www.linkedin.com/in/saipraneeth1/) <br />
+[Vihn,Pahn](https://github.com/vn0707/) <br />
 
 
 ## Summary : 
-The goal of this project is to create a dashboard of the current US Senate, in order to display the performance of the senators. The purpose of the project is to provide necessary information to voters in order to empower them to make informed choices.
+The goal of the project is to create a dashboard for the current US Senate, In order to track their performace. It would provide necessary information to voters and enable them to make an informed choice.
 
 
 ## Scope: 
-The dashboard will display information which we deem necessary in evaluation of each senator’s performance. We will display senators’ voting records on various bills, approval rates, ratings from advocacy organizations, bills sponsored, as well as ideology scores in their respective states. 
+The dashboard will display information for each senator that we believe is necessary to evaluate their performance, such as their voting record on various bills, approval ratings, ratings from advocacy organisations, bills sponsored, crime rate,  poverty rate & unemployment rate in their respective states.
 
 ## Technologies:
 HTML/CSS & Java Script for web page design. <br />
@@ -28,18 +28,23 @@ Bootstrap library for user interaction. <br />
 Python for manipulating data into required format. <br />
 Beautiful soup library for web scraping. <br />
 Flask-Powered RESTful API. <br />
-D3.JS, Plotly & Leaflet libraries for graphs. <br />
+D3.JS, Plotly, Leaflet & Highcharts libraries for graphs. <br />
 SQL & MongoDB for data storage. <br />
 
 ## Data Sets:
 Senators info : [Current Senators Info API](https://www.govtrack.us/api/v2/role?current=true&role_type=senator) <br />
 Popularity: [Senate Popularity Data Source](https://morningconsult.com/2019/01/10/americas-most-and-least-popular-senators-q4-2018-2/) <br />
+Senator Score: [Senator Ideology Score](https://www.govtrack.us/congress/members/report-cards/2019/senate/ideology) <br />
 Crime Rate: [Crime Rate Data](https://worldpopulationreview.com/state-rankings/crime-rate-by-state)<br />
 Poverty Rate: [Poverty Rate Data](https://worldpopulationreview.com/state-rankings/poverty-rate-by-state)<br />
-Ideology Score: [Ideology Score Data] (https://www.govtrack.us/congress/members/report-cards/2019/senate/ideology)<br />
 
 ## Project Location:  
 [GitHub Project Repository](https://github.com/sai-praneeth-reddy/GT_US_Senate.git)
+
+
+## Inspired Visualizations
+
+
 
 
 
