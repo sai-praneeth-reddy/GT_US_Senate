@@ -34,6 +34,13 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
 </head>
 
 <body>
@@ -142,13 +149,8 @@
     <section class="counts section-bg">
       <div class="container">
 
-        <div class="row no-gutters">
-          <figure class="highcharts-figure">
-            <div id="container"></div>
-            <p class="highcharts-description">
-          </p>
-        </figure>
-        </div>
+      <div id="map"></div>
+      
           
       </div>
 
@@ -1397,6 +1399,17 @@
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="app.js"></script>
+   <!-- Leaflet JavaScript -->
+   <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+   <!-- D3 JavaScript -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+   <!-- Include data JS -->
+  <script type="text/javascript" src="data/us-states.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+  <!-- API KEY -->
+  <script type="text/javascript" src="static/js/config.js"></script>
 
 </body>
 
