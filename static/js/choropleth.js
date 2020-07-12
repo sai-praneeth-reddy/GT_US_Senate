@@ -1,6 +1,7 @@
 var mapboxAccessToken = "pk.eyJ1IjoiZGFpc3kwMjIzIiwiYSI6ImNrYnZmZmt3YzAxM2IycG12cDZoNDBlYWUifQ.oSsci1DmRTqHBU19snkUzA";
 var map = L.map('map').setView([37.8, -96], 4);
 
+
 // Step1: Basic States Map
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
