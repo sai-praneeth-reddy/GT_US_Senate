@@ -1,0 +1,53 @@
+,State,Homicide_Rate,Poverty_Rate,Ideology_Score
+0,New Hampshire,1,0.0762,0.3835
+1,North Dakota,1.3,0.1054,0.8675
+2,Maine,1.7,0.1214,0.5015
+3,Idaho,1.9,0.1356,0.8625
+4,Rhode Island,1.9,0.1259,0.1655
+5,Minnesota,2,0.099,0.1585
+6,Nebraska,2.2,0.1122,0.781
+7,Vermont,2.2,0.1073,0.1115
+8,Utah,2.4,0.1018,0.71
+9,Massachusetts,2.5,0.104,0.1795
+10,Oregon,2.5,0.1385,0.1235
+11,Wyoming,2.6,0.1088,0.836
+12,Hawaii,2.7,0.0967,0.1575
+13,Connecticut,2.8,0.0973,0.1615
+14,New York,2.8,0.1426,0.1555
+15,South Dakota,2.9,0.1309,0.8215
+16,Washington,3.1,0.1126,0.2625
+17,Wisconsin,3.2,0.1156,0.471
+18,Iowa,3.3,0.1129,0.834
+19,New Jersey,3.6,0.1018,0.1765
+20,Colorado,3.9,0.1068,0.5245
+21,Montana,3.9,0.1335,0.656
+22,California,4.6,0.1402,0.106
+23,West Virginia,4.7,0.1725,0.6635
+24,Florida,5,0.1449,0.857
+25,Texas,5,0.1511,0.909
+26,Virginia,5.3,0.1062,0.328
+27,Kansas,5.5,0.1204,0.8235
+28,Delaware,5.6,0.1156,0.391
+29,Michigan,5.7,0.1463,0.323
+30,North Carolina,5.8,0.1501,0.743
+31,Pennsylvania,5.8,0.1234,0.5025
+32,Arizona,5.9,0.1572,0.721
+33,Kentucky,5.9,0.1739,0.645
+34,Indiana,6,0.1369,0.8285
+35,Ohio,6.1,0.1414,0.3995
+36,Oklahoma,6.2,0.1551,0.894
+37,Georgia,6.7,0.1561,0.8105
+38,New Mexico,7.1,0.1961,0.2625
+39,Illinois,7.8,0.1276,0.209
+40,South Carolina,7.8,0.1555,0.7625
+41,Tennessee,7.8,0.1573,0.846
+42,Mississippi,8.2,0.2007,0.858
+43,Alabama,8.3,0.1705,0.598
+44,Alaska,8.4,0.1054,0.6055
+45,Arkansas,8.6,0.1706,0.8725
+46,Maryland,9,0.0922,0.216
+47,Nevada,9.1,0.1346,0.297
+48,Missouri,9.8,0.1376,0.8155
+49,Louisiana,12.4,0.1884,0.8015
+50,Puerto Rico,,0.4414,
+51,District of Columbia,,0.16,
