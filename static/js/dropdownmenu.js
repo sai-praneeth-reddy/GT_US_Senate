@@ -1,11 +1,11 @@
 var pic_url
 function init() {
   var dropDown = d3.select('#selDataset')
-  d3.csv('../Data/images.csv').then(data => {
+  d3.csv('data/images.csv').then(data => {
     pic_url = data
   })
   // use state to populate the options
-  d3.json('../Data/us-senator.json').then(data => {
+  d3.json('data/us-senator.json').then(data => {
     var senator_info = data.objects
     var all_states = new Set()
     senator_info.forEach(senator => {
@@ -27,7 +27,7 @@ function optionChanged(senatorState) {
 }
 
 function buildMeta(senatorState) {
-  d3.json('../Data/us-senator.json').then(data => {
+  d3.json('data/us-senator.json').then(data => {
     var senator_info = data.objects
     var resultArray = senator_info.filter(i => i.state == senatorState)
     var senatorMetadata = d3.select('#sample-metadata')
