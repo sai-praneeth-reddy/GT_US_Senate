@@ -1,27 +1,37 @@
-var mapboxAccessToken = "pk.eyJ1IjoiZGFpc3kwMjIzIiwiYSI6ImNrYnZmZmt3YzAxM2IycG12cDZoNDBlYWUifQ.oSsci1DmRTqHBU19snkUzA";
-var map = L.map('map').setView([37.8, -96], 4);
-
+var mapboxAccessToken =
+    'pk.eyJ1IjoiZGFpc3kwMjIzIiwiYSI6ImNrYnZmZmt3YzAxM2IycG12cDZoNDBlYWUifQ.oSsci1DmRTqHBU19snkUzA'
+var map = L.map('map').setView([37.8, -96], 4)
 
 // Step1: Basic States Map
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
-    id: 'mapbox/light-v9',
-    tileSize: 512,
-    zoomOffset: -1
-}).addTo(map);
+L.tileLayer(
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' +
+    mapboxAccessToken,
+    {
+        id: 'mapbox/light-v9',
+        tileSize: 512,
+        zoomOffset: -1
+    }
+).addTo(map)
 
-L.geoJson(statesData).addTo(map);
+L.geoJson(statesData).addTo(map)
 
 // Step2: Adding Some Color
 
 function getColor(d) {
-    return d > 0.6  ? '#FF0000':
-           d > 0.5  ? '#990099':
-           d > 0.4  ? '#9999FF':
-           d > 0.3  ? '#6666FF':
-           d > 0.2  ? '#3333FF':
-           d > 0.1 ? '#0000FF':
-                "#0000CC";
+    return d > 0.6
+        ? '#FF0000'
+        : d > 0.5
+            ? '#990099'
+            : d > 0.4
+                ? '#9999FF'
+                : d > 0.3
+                    ? '#6666FF'
+                    : d > 0.2
+                        ? '#3333FF'
+                        : d > 0.1
+                            ? '#0000FF'
+                            : '#0000CC'
 }
 
 function style(feature) {
@@ -32,38 +42,38 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7
-    };
+    }
 }
 
-L.geoJson(statesData, {style: style}).addTo(map);
+L.geoJson(statesData, { style: style }).addTo(map)
 
 // Step3: Adding Interaction
 
 function highlightFeature(e) {
-    var layer = e.target;
+    var layer = e.target
 
     layer.setStyle({
         weight: 5,
         color: '#666',
         dashArray: '',
         fillOpacity: 0.7
-    });
+    })
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
+        layer.bringToFront()
     }
 }
 
 function resetHighlight(e) {
-    geojson.resetStyle(e.target);
+    geojson.resetStyle(e.target)
 }
 
-var geojson;
+var geojson
 // ... our listeners
-geojson = L.geoJson(statesData);
+geojson = L.geoJson(statesData)
 
 function zoomToFeature(e) {
-    map.fitBounds(e.target.getBounds());
+    map.fitBounds(e.target.getBounds())
 }
 
 function onEachFeature(feature, layer) {
@@ -71,75 +81,88 @@ function onEachFeature(feature, layer) {
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: zoomToFeature
-    });
+    })
 }
 
 geojson = L.geoJson(statesData, {
     style: style,
     onEachFeature: onEachFeature
-}).addTo(map);
-
+}).addTo(map)
 
 //Step4: Custom Info control
 
-var info = L.control();
+var info = L.control()
 
 info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
+    this._div = L.DomUtil.create('div', 'info') // create a div with a class "info"
+    this.update()
+    return this._div
+}
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>State Data</h4>' +  (props ?
-        '<b>' + props.name + '</b><br/>' 
-        + 'Ideology Score: ' + props.Ideology_Score.toFixed(2) + '</b><br />' 
-        + 'Poverty Rate: '+ props.Poverty_Rate.toFixed(2) +'%' + '</b><br />' 
-        + 'Homicide Rate: '+ props.Homicide_Rate.toFixed(2) +'%' + '</b><br />' 
-        : 'Hover over a state');
-};
+    this._div.innerHTML =
+        '<h4>State Data</h4>' +
+        (props
+            ? '<b>' +
+            props.name +
+            '</b><br/>' +
+            'Ideology Score: ' +
+            props.Ideology_Score.toFixed(2) +
+            '</b><br />' +
+            'Poverty Rate: ' +
+            props.Poverty_Rate.toFixed(2) +
+            '%' +
+            '</b><br />' +
+            'Homicide Rate: ' +
+            props.Homicide_Rate.toFixed(2) +
+            '%' +
+            '</b><br />'
+            : 'Hover over a state')
+}
 
-info.addTo(map);
+info.addTo(map)
 
 function highlightFeature(e) {
-    var layer = e.target;
+    var layer = e.target
 
     layer.setStyle({
         weight: 5,
         color: '#666',
         dashArray: '',
         fillOpacity: 0.7
-    });
+    })
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-        layer.bringToFront();
+        layer.bringToFront()
     }
-    info.update(layer.feature.properties);
+    info.update(layer.feature.properties)
 }
 
 function resetHighlight(e) {
-    geojson.resetStyle(e.target);
-    info.update();
+    geojson.resetStyle(e.target)
+    info.update()
 }
 
 // Step5: Custom Legend Control
 
-var legend = L.control({position: 'bottomright'});
+var legend = L.control({ position: 'bottomright' })
 
 legend.onAdd = function (map) {
-
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
+        grades = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
 
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 0.1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+            '<i style="background:' +
+            getColor(grades[i] + 0.1) +
+            '"></i> ' +
+            grades[i] +
+            (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+')
     }
 
-    return div;
-};
+    return div
+}
 
-legend.addTo(map);
+legend.addTo(map)

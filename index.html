@@ -14,7 +14,9 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!--CSS Files -->
   <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +25,10 @@
   <link href="static/animate.css/animate.min.css" rel="stylesheet">
   <link href="static/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="static/venobox/venobox.css" rel="stylesheet">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <!--Drop Down Menu-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,7 +37,10 @@
   <link href="static/css/style.css" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="static/css/table.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
 
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/choropleth.css">
 </head>
 
 <body>
@@ -55,11 +64,11 @@
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div>
   </section>
 
-<!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header">
     <div class="container d-flex">
 
@@ -74,8 +83,9 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About this Project</a></li>
           <li><a href="#cards">Senator Cards</a></li>
-          <li><a href="#search">Senator Search</a></li>
-          <li><a href="choropleth.html">States Map</a></li>
+          <li><a href="#map">States Map</a></li>
+          <li><a href="#highchart">Approval</a></li>
+          <!-- <li><a href="choropleth.html">States Map</a></li> -->
           <li><a href="table.html">Data</a></li>
           <li><a href="#team">Team</a></li>
         </ul>
@@ -91,7 +101,9 @@
 
         <div class="section-title">
           <h2>About this Project</h2>
-          <p>The goal of this project is to create a dashboard of the current US Senate, in order to display the performance of the senators. The purpose of the project is to provide necessary information to voters in order to empower them to make informed choices.</p>
+          <p>The goal of this project is to create a dashboard of the current US Senate, in order to display the
+            performance of the senators. The purpose of the project is to provide necessary information to voters in
+            order to empower them to make informed choices.</p>
         </div>
 
         <div class="row">
@@ -102,142 +114,173 @@
             <h3><strong>Introduction:</strong> Who’s your Senator?</h3>
 
             <div class="bullet">
-            <li>The year 2020 will be one for the history books! All over the world, there is civil unrest; all politically charged. In the United States, the political climate has its citizens enthralled in the political process now more than ever leaving it’s people to pay closer attention to those who help to make the laws that affect everyone’s daily lives.</li>
-            <li>A good place to start would be with your senators. Senators come from all walks of life and they are tasked with the job of promoting and passing legislation, utilizing a collaborative approach to problem solving, having a competitive temperament, and the ability to juggle the interests of its tax payers, local business leaders, and other government officials. Explore our database of senators and find out who is your direct link to Congress!</li>
+              <li>The year 2020 will be one for the history books! All over the world, there is civil unrest; all
+                politically charged. In the United States, the political climate has its citizens enthralled in the
+                political process now more than ever leaving it’s people to pay closer attention to those who help to
+                make the laws that affect everyone’s daily lives.</li>
+              <li>A good place to start would be with your senators. Senators come from all walks of life and they are
+                tasked with the job of promoting and passing legislation, utilizing a collaborative approach to problem
+                solving, having a competitive temperament, and the ability to juggle the interests of its tax payers,
+                local business leaders, and other government officials. Explore our database of senators and find out
+                who is your direct link to Congress!</li>
+            </div>
           </div>
         </div>
-      </div>
     </section><!-- End About Us Section -->
 
 
-    <!-- ======= Senators Cards Section ======= -->
+     <!-- ======= Senators Cards Section ======= -->
     <section id="cards" class="cards">
       <div class="container">
         <div class="row">
-            <div class="well">
-              <h5>US State:</h5>
-              <select id="selDataset" onchange="optionChanged(this.value)">
-              </select>
+          <div class="well">
+            <h5>US State:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)">
+            </select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Senator Name Card</h3>
             </div>
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">Senator Name Card</h3>
-              </div>
-    
-              <div class="panel-body container">
-                <div id="sample-metadata" class="row"></div>
+
+            <div class="panel-body container">
+              <div id="sample-metadata" class="row"></div>
             </div>
+          </div>
         </div>
-      </div>
     </section>
 
-  <!--Please put the HighChart here thank you-->
+  <!-- Section for Geo-Map -->
   
-  <section id="highcharts" class="highcharts">
-      <div class="container">
-        <h2>Please put the HighChart here</h2>
-  </section>
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
+
+
+    <!-- Moved the table to the data tab -->
+
+ <!--Please put the HighChart here thank you-->
+  
+ 
+  <div class="High-container">
+    <div id="Highcharts"></div>
+    <h2>Fix Highcharts.js code</h2>
+  </div>
+
 
     <!-- ======= Our Team Section ======= -->
     <section id="team" class="team">
-        <div class="container">
-          <div class="row">
-      
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="member">
-                <img src="static/img/team/sai.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Sai Praneeth Reddy</h4>
-                    <span>CEO</span>
-                  </div>
-                  <div class="social">
-                    <a href="https://www.linkedin.com/in/saipraneeth1/"><i class="icofont-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
-              <div class="member">
-                <img src="static/img/team/lingzi.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Lingzi Xaioli</h4>
-                    <span>Developer</span>
-                  </div>
-                  <div class="social">
-                    <a href="https://www.linkedin.com/in/lingzi-xiaoli-27b87174/"><i class="icofont-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
-              <div class="member">
-                <img src="static/img/team/ana.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Ana Cifuentes</h4>
-                    <span>Analyst</span>
-                  </div>
-                  <div class="social">
-                    <a href="https://www.linkedin.com/in/anacifuentesco/?locale=en_US"><i class="icofont-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
-              <div class="member">
-                <img src="static/img/team/rachael.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Rachael Munyua</h4>
-                    <span>Developer</span>
-                  </div>
-                  <div class="social">
-                    <a href="https://www.linkedin.com/in/rachael-munyua/"><i class="icofont-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-            <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
-              <div class="member">
-                <img src="static/img/team/cornelia.jpg" class="img-fluid" alt="">
-                <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Cornelia Annorh Harris</h4>
-                    <span>Project Manager</span>
-                  </div>
-                  <div class="social">
-                    <a href="https://www.linkedin.com/in/corneliaharris/"><i class="icofont-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-  </footer><!-- End Footer -->
+      <div class="container">
+        <div class="row">
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="member">
+              <img src="static/img/team/sai.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Sai Praneeth Reddy</h4>
+                  <span>Lead</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/saipraneeth1/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Vendor JS Files -->
-  <script src="static/jquery/jquery.min.js"></script>
-  <script src="static/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/jquery.easing/jquery.easing.min.js"></script>
-  <script src="static/jquery-sticky/jquery.sticky.js"></script>
-  <script src="static/waypoints/jquery.waypoints.min.js"></script>
-  <script src="static/counterup/counterup.min.js"></script>
-  <script src="static/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/owl.carousel/owl.carousel.min.js"></script>
-  <script src="static/venobox.min.js"></script>
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+            <div class="member">
+              <img src="static/img/team/lingzi.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Lingzi Xaioli</h4>
+                  <span>Developer</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/lingzi-xiaoli-27b87174/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <!-- Template Main JS File -->
-  <script src="static/js/main.js"></script>
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="static/img/team/ana.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Ana Cifuentes</h4>
+                  <span>Analyst</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/anacifuentesco/?locale=en_US"><i
+                      class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./static/js/dropdownmenu.js"></script>
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="static/img/team/rachael.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Rachael Munyua</h4>
+                  <span>Developer</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/rachael-munyua/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="static/img/team/cornelia.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Cornelia Annorh Harris</h4>
+                  <span>Project Manager</span>
+                </div>
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/corneliaharris/"><i class="icofont-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          </footer><!-- End Footer -->
+
+          <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+          <!-- Vendor JS Files -->
+          <!-- Leaflet JavaScript -->
+          <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+          <!-- D3 JavaScript -->
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+          <!-- Include data JS -->
+          <script type="text/javascript" src="static/js/us-states.js"></script>
+          <!-- Our JavaScript -->
+          <script type="text/javascript" src="static/js/choropleth.js"></script>
+          <!-- API KEY -->
+          <script type="text/javascript" src="static/js/config.js"></script>
+          <script src="static/jquery/jquery.min.js"></script>
+          <script src="static/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="static/jquery.easing/jquery.easing.min.js"></script>
+          <script src="static/jquery-sticky/jquery.sticky.js"></script>
+          <script src="static/waypoints/jquery.waypoints.min.js"></script>
+          <script src="static/counterup/counterup.min.js"></script>
+          <script src="static/isotope-layout/isotope.pkgd.min.js"></script>
+          <script src="static/owl.carousel/owl.carousel.min.js"></script>
+          <script src="static/venobox.min.js"></script>
+
+          <!-- Template Main JS File -->
+          <script src="static/js/main.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+          <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+          <script src="./static/js/dropdownmenu.js"></script>
 
 </body>
 

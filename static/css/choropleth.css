@@ -1,21 +1,29 @@
- body {
+body {
   padding: 0;
   margin: 0;
 }
 
-#map,
-body,
-html {
-  height: 100%;
-} 
+.map-container {
+  max-width: 82.9%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
 
+#map {
+  border: 2px solid black;
+  box-shadow: 1px 2px 15px 0px grey;
+  height: 500px;
+  width: 100%;
+  position: sticky !important;
+}
 
 .info {
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: white;
-  background: rgba(255,255,255,0.8);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 .info h4 {
@@ -38,5 +46,4 @@ html {
   width: 14px;
   height: 14px;
   float: left;
-
 }
