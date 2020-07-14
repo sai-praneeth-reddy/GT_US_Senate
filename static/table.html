@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+
+<h2>My Senator</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<div class="col-md-10">
+  <div id="table-area" class="">
+    <table id="myTable" class="table table-striped">
+      
+      <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+        table.center {
+          margin-left: auto; 
+          margin-right: auto;
+        }
+        </style>
+      
+  
+  <thead>
+   <tr> 
+    <tr class="header">
+    <th style="width:14%;">Name</th>
+    <th style="width:12%;">Party</th>
+    <th style="width:8%;">State</th>
+    <th style="width:14%;">Contact</th>
+    <th style="width:12%;">Website</th>
+    <th style="width:10%;">Ideology_Score</th>"
+    <th style="width:10%;">Ideology_Rank</th>"
+    <th style="width:10%;">Approval_Rate</th>"
+    <th style="width:12%;">End_date</th>"
+  </tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+  
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+<script src="js/data.js"></script>
+<script src="js/table.js"></script> 
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
