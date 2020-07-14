@@ -14,7 +14,7 @@
 // var categories = "Politician";
 
 
-d3.csv("/data/top10_approve_rate.csv").then(function(approve) {
+d3.csv("./data/top10_approve_rate.csv").then(function(approve) {
     console.log(approve);
 
 // d3.csv("/data/employees.csv", function(data) {
@@ -45,7 +45,7 @@ Highcharts.chart('container', {
       text: "Q4 2018 Rankings"
     },
     subtitle: {
-      text: 'Source: <a href="https://morningconsult.com/2019/01/10/americas-most-and-least-popular-senators-q4-2018-2/">America Most and Least Popular Senators</a>'
+      text: 'Source: <a href="https://morningconsult.com/2019/01/10/americas-most-and-least-popular-senators-q4-2018-2/">MorningConsult</a>'
     },
     accessibility: {
       point: {

@@ -19,19 +19,16 @@ L.geoJson(statesData).addTo(map)
 // Step2: Adding Some Color
 
 function getColor(d) {
-    return d > 0.6
-        ? '#FF0000'
-        : d > 0.5
-            ? '#990099'
-            : d > 0.4
-                ? '#9999FF'
-                : d > 0.3
-                    ? '#6666FF'
-                    : d > 0.2
-                        ? '#3333FF'
-                        : d > 0.1
-                            ? '#0000FF'
-                            : '#0000CC'
+    return d > 0.9  ? '#a50f15':
+    d > 0.8  ? '#de2d26':
+    d > 0.7  ? '#fb6a4a':
+    d > 0.6  ? '#fc9272':
+    d > 0.5  ? '#990099':
+    d > 0.4  ? '#9ecae1':
+    d > 0.3  ? '#6baed6':
+    d > 0.2  ? '#4292c6':
+    d > 0.1 ? '#2171b5':
+         "#084594";
 }
 
 function style(feature) {
@@ -150,7 +147,7 @@ var legend = L.control({ position: 'bottomright' })
 
 legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
+    grades = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
 
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
