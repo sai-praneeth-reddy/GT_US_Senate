@@ -7,6 +7,14 @@
 !(function($) {
   "use strict";
 
+  $(function() {
+    AOS.init({
+      offset: 200,
+      duration: 1000,
+      once: true
+    });
+  });
+
   // Stick the header at top on scroll
   $("#header").sticky({
     topSpacing: 0,
@@ -193,6 +201,13 @@
     dots: true,
     loop: true,
     items: 1
+  });
+
+  $(window).on('load', function() {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   });
 
 })(jQuery);
