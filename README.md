@@ -7,12 +7,12 @@
 
 
 ## Team Members: 
-[Ana,Cifuentes](https://www.linkedin.com/in/anacifuentesco/?locale=en_US) <br />
-[Cornelia,Harris](http://www.linkedin.com/in/corneliaharris) <br />
-[Lingzi,Xiaoli](https://www.linkedin.com/in/lingzi-xiaoli-27b87174) <br />
-[Rachael,Munyua](http://www.linkedin.com/in/rachael-munyua) <br />
-[Sai,Reddy](https://www.linkedin.com/in/saipraneeth1/) <br />
-[Vihn,Pahn](https://github.com/vn0707/) <br />
+[Ana Cifuentes](https://www.linkedin.com/in/anacifuentesco/?locale=en_US) <br />
+[Cornelia Harris](http://www.linkedin.com/in/corneliaharris) <br />
+[Lingzi Xiaoli](https://www.linkedin.com/in/lingzi-xiaoli-27b87174) <br />
+[Rachael Munyua](http://www.linkedin.com/in/rachael-munyua) <br />
+[Sai Reddy](https://www.linkedin.com/in/saipraneeth1/) <br />
+[Vinh Phan](https://github.com/vn0707/) <br />
 
 
 ## Summary : 
