@@ -14,7 +14,7 @@
 // var categories = "Politician";
 
 
-d3.csv("/data/top10_approve_rate.csv").then(function(approve) {
+d3.csv("./data/top10_approve_rate.csv").then(function(approve) {
   console.log(approve);
 
 // d3.csv("/data/employees.csv", function(data) {
